@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@600&family=Playfair+Display:wght@700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Modify the body CSS and add video styling */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  background-color: #000; /* Fallback color if video doesn't load */
+}
+
+#bgVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Remove the existing background property from body */
+.top-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  /* background: rgba(0, 0, 0, 0.5); */
+  margin-top: 20px;
+}
+.logo-image {
+  max-width: 20%; /* Make the image responsive */
+  height: auto; /* Maintain aspect ratio */
+    display: block; /* Center the image */
+
+}
+
+.logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+  /* background: rgba(0, 0, 0, 0.5); */
+}
+
+.logo text {
+  stroke-width: 5px;
+  stroke-dasharray: 900;
+  stroke-dashoffset: -900;
+  animation: text 4s forwards 1;
+  animation-delay: 1s;
+}
+
+.logo .underline {
+  stroke-dasharray: 900;
+  stroke-dashoffset: 900;
+  animation: underline 4s forwards 1;
+  animation-delay: 5s;
+}
+
+.email-content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 80px; /* Increased margin to move content down */
+  font-family: 'Poppins', sans-serif;
+  flex-grow: 1; /* Allow this section to grow and take available space */
+}
+
+.subscribe-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+.input-wrapper {
+  width: 100%; /* Make it responsive */
+  max-width: 25rem; /* Set a max width */
+  height: 45px;
+  border-radius: 20px;
+  padding: 5px;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  background-color: #292524;
+}
+
+.icon {
+  width: 30px;
+  fill: rgb(255, 255, 255);
+  margin-left: 8px;
+  transition: all 0.3s;
+}
+
+.input {
+  flex-grow: 1; /* Allow the input to grow */
+  height: 100%;
+  border: none;
+  outline: none;
+  padding-left: 15px;
+  background-color: #292524;
+  color: white;
+  font-size: 1em;
+}
+
+.input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #292524 inset;
+  -webkit-text-fill-color: #ffffff;
+}
+
+.Subscribe-btn {
+  height: 100%;
+  width: 95px;
+  border: none;
+  border-radius: 15px;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  background-color: #ffffff;
+  font-weight: 500;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: all 0.3s;
+}
+
+.arrow {
+  position: absolute;
+  margin-right: 150px;
+  transition: all 0.3s;
+}
+
+.input-wrapper:active .icon {
+  transform: scale(1.3);
+}
+
+.Subscribe-btn:hover {
+  color: white;
+}
+
+.Subscribe-btn:hover .arrow {
+  margin-right: 0;
+  animation: jello-vertical 0.9s both;
+  transform-origin: right;
+}
+
+@keyframes jello-vertical {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  30% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  40% {
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  50% {
+    transform: scale3d(0.85, 1.15, 1);
+  }
+  65% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+  75% {
+    transform: scale3d(0.95, 1.05, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.Subscribe-btn:active {
+  transform: scale(0.9);
+}
+
+
+/* Footer Styles */
+.footer {
+  width: 100%;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer p {
+  margin: 5px 0;
+}
+
+.footer-link {
+  color: #00BFFF;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+@keyframes text {
+  75% {
+    fill: transparent;
+    stroke-dashoffset: 0;
+    stroke-width: 5px;
+  }
+  100% {
+    fill: #F3F3F3;
+    stroke-dashoffset: 0;
+    stroke-width: 0;
+  }
+}
+
+@keyframes underline {
+  75% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
